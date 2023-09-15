@@ -2,11 +2,7 @@ package com.epam.mjc.io;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class FileReader {
 
@@ -28,7 +24,7 @@ public class FileReader {
             }
             profile = new Profile(lines[0], Integer.parseInt(lines[1]), lines[2], Long.parseLong(lines[3]));
         } catch (NumberFormatException | IOException e) {
-            throw new RuntimeException(e);
+            throw new MyIOException();
         }
 
         return profile;
